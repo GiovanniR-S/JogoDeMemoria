@@ -3,9 +3,16 @@ let hasFlippedCard = false;
 let fistCard, secondCard;
 let lockBoard = false;
 
+//Audios
+var selectAudio = document.querySelector('.select');
+var erroAudio = document.querySelector('.erro');
+var acertouAudio = document.querySelector('.acertou');
+
 function flipCard(){
     if(lockBoard) return;
     if(this === fistCard) return;
+
+    selectAudio.play();
 
     this.classList.add('flip');
     if(!hasFlippedCard){
@@ -23,6 +30,7 @@ function flipCard(){
 function checkForMath() {
     if(fistCard.dataset.card === secondCard.dataset.card){
         disableCards();
+        acertouAudio.play();
         return;
     }
 
@@ -38,6 +46,7 @@ function disableCards() {
 
 function unFlipCard(){
     lockBoard = true;
+    erroAudio.play();
     setTimeout(() => {
         fistCard.classList.remove('flip');
         secondCard.classList.remove('flip');
