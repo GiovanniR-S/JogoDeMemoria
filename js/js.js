@@ -59,6 +59,10 @@ function resetBoard(){
     })
 })();
 
+function reset(){
+    return window.location.reload();
+}
+
 cards.forEach((card) => {
     card.addEventListener('click', flipCard);
 })

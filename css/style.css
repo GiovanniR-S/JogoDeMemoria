@@ -4,19 +4,37 @@
     box-sizing: border-box;
 }
 
+@font-face{
+    font-family: 'Spicy-Pumpkin';
+    src: url('../fonts/Spicy\ Pumpkin.ttf');
+}
+
 body{
     height: 100vh;
-    display: flex;
+    width: 100%;
     background-color: rgb(47, 163, 163);
+}
 
+header{
+    width: 100%;
+    height: 120px;
+    display: flex;
+    background-color: rgb(78, 150, 150);
+    box-shadow: 1px 1px 1px #000000;
+    align-items: center;
+    justify-content: center;
+}
+
+.container{
+    display: inline;
 }
 
 .memory-game{
+    display: flex;
+    flex-wrap: wrap;
     height: 640px;
     width: 640px;
     margin: 50px auto 50px auto;
-    display: flex;
-    flex-wrap: wrap;
     perspective: 1000px;
 }
 
@@ -56,4 +74,27 @@ body{
 /*Flip card animation*/
 .card.flip{
     transform: rotateY(180deg);
+}
+
+.reset{
+    width: 150px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: aquamarine;
+    cursor: pointer;
+    border-radius: 15px;
+    box-shadow: 1px 1px 1px #000000;
+    transform: scale(1);
+    font-family: 'Spicy-Pumpkin';
+    font-size: 20px;
+    color: black;
+}
+
+.reset:active{
+    transform: scale(0.95);
+    background-color: rgb(116, 172, 153);
+    color: white;
+    transition: transform 0.3s;
 }
